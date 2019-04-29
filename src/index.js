@@ -1,17 +1,17 @@
-import React from 'react'
-import ReactDOM from 'react-dom'
-import MessageList from './components/message-list'
+import React from 'react';
+import ReactDOM from 'react-dom';
+import MessageList from './containers/message-list';
 
-const NewApp = require('./components/message-list').default
+const NewApp = require('./containers/message-list').default;
 
 function renderApp(App) {
-  ReactDOM.render(<App />, document.querySelector('.main'))
+  ReactDOM.render(<App />, document.querySelector('.main'));
 }
 
-renderApp(MessageList)
+renderApp(MessageList);
 
 if (module.hot) {
-  module.hot.accept('./components/message-list', () => {
-    renderApp(NewApp)
-  })
+  module.hot.accept('./containers/message-list', () => {
+    renderApp(NewApp);
+  });
 }
